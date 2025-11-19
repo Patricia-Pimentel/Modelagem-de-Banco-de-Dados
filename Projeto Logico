@@ -1,0 +1,34 @@
+PROJETO LÓGICO
+
+
+Local (Codigo_Local, Nome local, Ativacao_local)
+
+Sensor (Codigo_sensor, Modelo_sensor, Codigo_Local)
+Codigo_Local referencia Local(Codigo_Local)
+
+Agente (ID, Nome_us, Permissao)
+
+Dispositivos (ID_dispositivo, Nome_dispositivo, Cor_dispositivo, Modelo_dispositivo, Codigo_Local)
+
+Codigo_Local referencia Local(Codigo_Local)
+
+Comando (ID_comando, Status_Comando, ID_agente)
+ID_agente referencia Agente (ID)
+Manutenção (Codigo_manutencao, Status_manut, ID_dispositivo)
+ID_dispositivo referencia Dispositivos (ID_dispositivo)
+
+Tabelas de relacionamentos 
+
+Sensor_Dispositivo (Codigo_sensor, ID_dispositivo )
+ID_dispositivo referencia Dispositivos (ID_dispositivo)
+Codigo_sensor referencia Sensor (Codigo_sensor)
+
+Comando_Dispositivo (ID_comando, ID_dispositivo)
+ID_dispositivo referencia Dispositivos (ID_dispositivo)
+ID_comando referencia Comando (ID_comando)
+
+Comando_Manutencao (ID_comando, Codigo_manutencao)
+ID_comando referencia Comando (ID_comando)
+Codigo_manutencao referencia Manutenção (Codigo_manutencao)
+
+
